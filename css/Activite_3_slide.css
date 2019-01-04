@@ -1,0 +1,333 @@
+/* --------------------------------------------*/
+/* Style de la section Slide                   */
+/*---------------------------------------------*/
+
+
+#slideshow {
+	width: 100%;
+	height: 550px;
+	display: flex;
+	justify-content: center;
+    position: relative;
+    margin-bottom: 200px;
+    padding-top: 200px;
+}
+ 
+
+    
+
+#contenair
+{
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	z-index: 0;	
+}
+
+figure {
+    position : relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+
+}
+
+.mySlides
+{
+    position: absolute;
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-bottom: 5px solid #F19722;
+}
+
+.mySlides img
+{
+    width: 100%;
+}
+
+#reservation
+{
+   align-content: center;
+}
+
+#capture1
+{
+    position: absolute;
+    width: 35%;
+    height: 300px;
+    margin-top: 9%;
+    margin-left: 8%;
+    border:  4px solid #F19722; 
+}
+
+#capture2
+{
+    position: absolute;
+    width: 32%;
+    height: 370px;
+    margin-top: 8%;
+    margin-left: 15%;
+    border:  4px solid #F19722; 
+}
+
+#capture3
+{
+    position: absolute;
+    width: 60%;
+    height: 200px;
+    margin-top: 17%;
+    margin-left: 20%;
+    border:  4px solid #F19722; 
+}
+
+#reservation
+{
+    margin-top: 3%;
+    margin-left: 32%;
+    padding: 1%;
+    text-align: center;
+}
+
+
+.commentCaMarche
+{
+    background-color: #F19722;
+    z-index: 1;
+    width: auto;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 1%;
+    color: rgba(44,134,147,1);
+    border:  4px solid #F19722; 
+    padding: 2px;
+    border-radius: 5px;
+    font-size : 1em;
+}
+    
+
+
+
+figure figcaption
+{
+    background-color: rgba(44,134,147,0.8);
+    z-index: 1;
+    width: 35%;
+    position: absolute;
+    margin-left: 52%;
+    margin-top:6%;
+    color: #F19722;
+    border:  4px solid #F19722; 
+    padding: 15px;
+}
+
+figure ul
+{
+    margin-right : 50px;
+}
+
+figure ul li
+{
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+figure ul li img
+{
+    margin-right: 10px;
+}
+
+ol li 
+{
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;    
+}
+
+ol
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+ul li img
+{
+    width: 25px;
+    height: 35px;
+}
+
+#showCanvas
+{
+    margin-left: -35px;
+}
+
+
+#book
+{
+    text-align: center;
+    align-content: center;
+}
+
+#showCanvas
+{
+    background-color: white;
+    border : 2px solid #F19722;
+}
+
+border
+{
+    
+}
+
+
+#fleche
+{
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	position: absolute;
+	width: 100%;
+	margin-top: 220px;
+ 
+}
+
+#fleche :hover
+{
+	background-color: #F19722;
+}
+
+
+#flecheG
+{
+	border-radius: 50%;
+	padding: 30px;
+    position: relative;
+    background-color: rgba(44,134,147,0.5);
+}
+
+
+.fa-angle-left
+{
+    border-radius: 50%;
+    margin-left: -10px;
+	position: absolute;
+	margin-top: -17px;
+	color: white;
+}
+
+#flecheD
+{
+	border-radius: 50%;
+	padding: 30px; 
+    position: relative;
+    background-color: rgba(44,134,147,0.5);
+}
+
+.fa-angle-right
+{
+	margin-left: -8px;
+	position: absolute;
+	margin-top: -17px;
+	color: white;
+	
+}
+
+/* --------------------------------------------------------------------------*/
+/* smartphone en paysage, tablette en portrait et petite tablette en paysage */                  
+/*---------------------------------------------------------------------------*/
+@media only screen and (min-width: 480px) and (max-width: 959px) 
+
+{ 
+    #howbooked 
+    {
+        width: 65%;
+        margin-left: 15%;
+        margin-top: 80px;
+    }
+    
+    .capture
+    {
+        visibility: hidden;
+    }
+    
+    #welcome 
+    {
+        width: 65%;
+        margin-left : 15%;
+        margin-top: 80px;
+    }
+    
+    #reservation
+    {
+        width: 65%;
+        margin-left : 15%;
+        margin-top: 120px;
+        height: 300px;
+    }
+}
+
+/* --------------------------------------------------------------------------*/
+/* smartphone en mode portrait                                               */                  
+/*---------------------------------------------------------------------------*/
+@media only screen and (max-width: 479px) 
+{
+    .capture
+    {
+        visibility: hidden;
+    }
+    
+    #welcome 
+    {
+        width: 65%;
+        margin-left : 15%;
+        margin-top: 120px;
+        height: 300px;
+    }
+    
+     #welcome ul li
+    {
+        visibility: hidden;
+    }
+    
+    #howbooked 
+    {
+        width: 65%;
+        margin-left: 15%;
+        margin-top: 80px;
+        height: 430px;
+    }
+    
+    #howbooked .btn-primary
+    {
+        visibility: hidden;
+    }
+    
+    #showCanvas
+    {
+        visibility: hidden;
+    }
+    
+    #book ul 
+    {
+        margin-left:-50%;
+        text-align: center;
+        width: 120%;
+    }
+    
+    #reservation
+    {
+        width: 65%;
+        margin-left : 15%;
+        margin-top: 120px;
+        height: 300px;
+    }
+    
+  
+   
+}
+
+

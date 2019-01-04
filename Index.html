@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <!--  définition de la page et script  -->
+    <head>
+        <meta charset="utf-8">    
+        <title>carte interactive de location de vélos</title>
+        <link rel="stylesheet" href="css/Activite_3_map.css">
+        <link rel="stylesheet" href="css/Activite_3_slide.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <!-- Corps html : comprends toute les parties visibles du site -->
+    <body>
+        <!-- entête du site -->
+        <header>
+            <!-- titre et logo -->
+            <div id="titre_logo">
+            <div id="logo">
+            <img src="./images/logo_velov.png" alt="velo'v"/>
+            </div>
+            <!-- menu de navigation -->
+            <nav>
+                <ul>
+                    <li><a href="#slideshow">Comment ça marche?</a></li>
+                    <li><a href="#myMap">Trouvez votre station</a></li>
+                    <li><a href="#timer">Vos réservations</a></li>
+                </ul>
+            </nav>
+            </div>	
+        </header> 
+        <!-- section slider -->
+        <section id="slideshow">
+            <div id="contenair">
+                <figure>   
+                    <img class="mySlides" src="images/image1.jpg" alt="réserver un vélo"/>
+                    <img class="capture" id="capture1" src="images/Capture1.PNG" alt="O-bike"/>
+                    <figcaption id="welcome">
+                        <h1>Bienvenue sur l'application O-Bike</h1>
+                        <p>Cliquez sur les marqueurs de la carte çi-dessous pour voir le détail de chaque station : </p>
+                        <ul>
+                            <li> <img src="./images/marker_green.png" alt="vélos disponibles"/><p>Vélos disponibles</p> </li>
+                            <li> <img src="./images/marker_pink.png" alt="pas de vélo disponible"/><p>Pas de vélos disponibles</p> </li>
+                            <li> <img src="./images/marker_brown.png" alt="station fermée"/><p>Station fermée</p></li>
+                            <li> <img src="./images/marker_blue.png" alt="reservation"/><p>Vélo réservé</p></li>
+                        </ul>
+                    </figcaption>
+                    <div class="commentCaMarche"><p>Comment ça marche ?</p></div>
+                </figure>
+                <figure id="book">
+                    <img class="mySlides" src="./images/image2.jpg" alt="réserver un vélo"/>
+                    <img class="capture" id="capture2" src="./images/Capture2.PNG" alt="O-bike"/>
+                    <figcaption id="howbooked">
+                        <h1>Réserver un vélo</h1>
+                        <p>Un vélo de disponible? Réservez votre vélo simplement en trois étapes</p>
+                        <ul>
+                            <li> <button id="showBookButton" class="btn btn-primary">reserver</button><p>1 - Cliquez sur le bouton                                                  réserver</p></li>
+                            <li> <canvas id="showCanvas" width="150" height="75"></canvas><p>2 - Signez dans le champs réservé</p> </li>
+                            <li> <button id="showValidButton" class="btn btn-primary">Valider</button><p>3 - Enfin, validez votre                                                    réservation</p></li>
+                        </ul>
+                    </figcaption>
+                    <div class="commentCaMarche"><p>Comment ça marche ?</p></div>
+                </figure>
+                <figure>
+                    <img class="mySlides" src="./images/image3.jpg" alt="réserver un vélo"/>
+                    <img class="capture"  id="capture3" src="./images/Capture3.PNG" alt="réserver un vélo"/>
+                    <figcaption id="reservation">
+                        <h1>Réservation</h1>
+                        <p>Retrouvez l'état de vos réservations en permanence en bas de page</p>
+                    </figcaption>
+                    <div class="commentCaMarche"><p>Comment ça marche ?</p></div>
+                </figure>
+                <div id="fleche">
+                    <div id="flecheG"><i class="fas fa-angle-left fa-2x"></i></div>
+                    <div id="flecheD"><i class="fas fa-angle-right fa-2x"></i></div>		
+                </div>
+            </div>    
+        </section>
+        <!-- carte et panneau d'affichage du détail des stations -->
+        <section id="myMap">   
+            <div id="map"></div>
+            <div id="infoStation">
+                <button id="initMap" class="btn btn-primary">Actualiser la carte</button>
+                <h3>Trouvez votre station</h3>
+                <div id="infoAccueil">
+                    <p>Cliquez sur l'emplacement d'une station pour voir son détail</p>
+                    <ol>
+                        <li> <img src="./images/marker_green.png" alt="vélos disponibles"/><p>Vélos disponibles</p> </li>
+                        <li> <img src="./images/marker_pink.png" alt="pas de vélo disponible"/><p>Pas de vélos disponibles</p> </li>
+                        <li> <img src="./images/marker_brown.png" alt="station fermée"/><p>Station fermée</p></li>
+                        <li> <img src="./images/marker_blue.png" alt="reservation"/><p>Vélo réservé</p></li>
+                    </ol>
+                </div>
+                    <div id="detailStation">
+                        <p id="title"></p>
+                        <p id="adress"></p>
+                        <p id="status"></p>
+                        <p id="available_place"></p>
+                        <p id="available_bike"></p>
+                        <p id="bonus"></p>
+                        <div id="reserver">
+                            <button id="booked" class="btn btn-primary">Réserver</button>
+                            <p id="nobooked">désolé, plus de vélo disponible pour cette station</p>
+                    </div>
+                </div>
+                <div  id="alreadyBooked">                                                                                     
+                    <p>Vous avez déjà une réservation en cours, si vous effectuez une nouvelle réservation, elle remplacera la                                             précédente. Êtes vous sûr de vouloir continuer ?</p>
+                    <button id="validAnotherB" class="btn btn-primary">OUI</button>
+                    <button id="cancelAnotherB" class="btn btn-primary">NON</button>
+                </div>
+                <div id="confirmResa">
+                    <div id="adressResa"></div>
+                    <div id="Canvas">
+                        <p> Pour valider votre réservation, vous devez signer puis cliquer sur valider</p>
+                        <canvas id="myCanvas" width="300" height="200"></canvas>
+                    </div>
+                    <button id="cancel" class="btn btn-primary">Annuler</button>
+                    <button id="valid" class="btn btn-primary">Valider</button>
+                    <button id="clear" class="btn btn-primary">Effacer</button>
+                </div>
+            </div>
+        </section>
+        <!-- Pied de page : état des réservations et compte à rebours -->
+        <footer>   
+            <p id="timer"></p> 
+            <button id="cancelResa" class="btn btn-primary">Annuler la réservation</button>
+        </footer>
+        
+        <!-- scripts  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>     
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-ozsiS8B_PIdGMORG0QdezIvWJ5E2r7o"></script>
+        <script src="./script/Activite_3_timer.js"></script>
+        <script src="./script/Activite_3_map.js"></script>
+        <script src="./script/Activite_3_slide.js"></script>
+        <script src="./script/Activite_3_canvas.js"></script>
+        <script src="./script/Activite_3_main.js"></script>
+    </body>
+</html>

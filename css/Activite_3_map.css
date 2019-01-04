@@ -1,0 +1,364 @@
+/* --------------------------------------------------------------------------*/
+/* Style général de notre site                                               */                  
+/*---------------------------------------------------------------------------*/
+
+body
+{
+	font-size: 1.1em;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+    
+
+}
+
+#bloc_page
+{
+    width:100%;
+    margin: auto;
+    position: relative;
+}
+
+
+/* --------------------------------------------------------------------------*/
+/* Entête                                                                    */                  
+/*---------------------------------------------------------------------------*/
+
+
+/* --------------------------------------------------------------------------*/
+/* titre + logo                                                              */                  
+/*---------------------------------------------------------------------------*/
+#titre_logo
+{   
+	position: fixed;
+	background-color: white;
+	width: 100%;
+	height: 140px;
+	top: 0;
+	z-index: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 15px;
+}
+
+#logo
+{
+	margin-right: 10%;
+    width: 200px;
+    margin-top: -22px;
+    padding-top: 25px;
+    
+    
+
+}
+
+#logo img
+{
+    width: 150px;
+    height: 120px;
+}
+
+
+
+/* --------------------------------------------------------------------------*/
+/* menu de navigation                                                        */                  
+/*---------------------------------------------------------------------------*/
+nav ul
+{
+	list-style-type: none;
+	display: flex;
+	margin-top: 80px;	
+}
+
+nav li
+{
+	margin-right: 50px;
+    text-align: center;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    padding: 10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #F19722;
+}
+
+nav a:hover
+{
+    border-top: 3px solid #2C8693;
+    padding-top: 42px;
+}
+
+
+ol li img
+{
+    width: 25px;
+    height: 35px;
+}
+
+/* --------------------------------------------------------------------------*/
+/* carte + panneau détail station                                              */                  
+/*---------------------------------------------------------------------------*/
+#myMap
+{
+    display: flex;
+    background-color: #edf0f4;
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+/* --------------------------------------------------------------------------*/
+/* carte                                                                     */                  
+/*---------------------------------------------------------------------------*/
+#map
+{
+    height: 800px;
+    width: 1300px;
+    margin: 20px;
+
+    
+}
+
+/* --------------------------------------------------------------------------*/
+/* panneau détail station                                                    */                  
+/*---------------------------------------------------------------------------*/
+#infoStation
+{
+    height: 782px;
+    width: 500px;
+    margin: auto;
+    border-radius : 0px;
+    margin-left:10px;
+    margin-right: 20px;
+    background-color: white;
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s ease-in-out;
+    color : #2C8693;
+    text-align: center;
+    padding: 20px 20px 0 20px;
+
+}
+
+#infoStation:hover
+{
+    box-shadow: 0 20px 20px 0 #575a5e ;
+
+}
+
+h3
+{
+    color : #F19722;
+    font-size: 1.8em;
+}
+
+#detailStation p
+{
+    padding: 5px;
+
+}
+
+button
+{
+    color : white;
+    padding: 5px 20px;
+    border-radius: 50px;
+    background-color: #F19722; 
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.3);
+    border: 0px;
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+button:hover
+{
+    box-shadow: 0 3px 3px 3px #7e7f82;
+ 
+}
+
+#initMap
+{
+    padding: 5px 20px;
+    background-color: #2C8693;
+    margin-left: 200px;
+}
+
+#booked
+{
+    padding: 10px 50px;
+}
+
+/* --------------------------------------------------------------------------*/
+/* canvas                                              */                  
+/*---------------------------------------------------------------------------*/
+#myCanvas
+{
+    border: 2px solid #2C8693;
+    margin: 20px;
+    touch-action : none;
+}
+
+/* --------------------------------------------------------------------------*/
+/* pied de page ___ état des réservations                                                   */                  
+/*---------------------------------------------------------------------------*/
+footer
+{
+    width: 90%;
+    height: 150px;
+    margin: auto;
+    background-color : #2C8693;
+    text-align: center;
+    padding: 6% 0 4% 0;
+    font-size: 1.3em;
+    margin-top: 8%;
+    margin-bottom: 2%;
+    color: white;
+    border-top : 4px solid #F19722; 
+    
+}
+
+
+/* --------------------------------------------------------------------------*/
+/* smartphone en paysage, tablette en portrait et petite tablette en paysage */                                                   
+/*---------------------------------------------------------------------------*/
+@media only screen and (min-width: 480px) and (max-width: 959px)
+
+{
+    #titre_logo
+    {   
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        padding-bottom: 50px;
+        
+    } 
+    
+    #logo
+    {
+        margin-left : 18%;
+        margin-bottom: -60px;
+        margin-top: 40px;
+    }
+    
+    nav a:hover
+    {
+        padding-top: 20px;
+        border : 0;
+        color : #2C8693;
+        
+    }
+    
+    nav ul 
+    {
+        padding-bottom: 20px;
+    }
+    
+    #myMap
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #map
+    {
+        height: 800px;
+        width: 100%;
+        margin: 0px; 
+        margin-bottom: 30px;
+    }
+
+    #infoStation
+    {
+        height: 600px;
+        width: 80%;
+        margin: auto;
+        margin-left: 7%;
+        border-radius : 0px;
+        background-color: white;
+        box-shadow: 0 15px 15px 0 rgba(0,0,0,0.3);
+        transition: box-shadow 0.3s ease-in-out;
+        color : #2C8693;
+        text-align: center;
+        padding: 20px 20px 0 20px;
+
+    }
+    
+    footer
+    {
+        height: 200px;
+    }
+    
+}
+
+/* --------------------------------------------------------------------------*/
+/* smartphone en mode portrait                                               */                                                   
+/*---------------------------------------------------------------------------*/
+@media only screen and (max-width: 479px) 
+{
+   #titre_logo
+    {   
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        padding-bottom: 50px;
+        
+    } 
+    
+    #logo
+    {
+        margin-left : 18%;
+        margin-bottom: -60px;
+        margin-top: 40px;
+    }
+    
+    nav a:hover
+    {
+        padding-top: 20px;
+        border : 0;
+        color : #2C8693;
+        
+    }
+    
+    nav ul 
+    {
+        padding-bottom: 20px;
+    }
+    
+    #myMap
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #map
+    {
+        height: 800px;
+        width: 100%;
+        margin: 0px; 
+        margin-bottom: 30px;
+    }
+    
+    
+
+    #infoStation
+    {
+        height: 600px;
+        width: 80%;
+        margin: auto;
+        margin-left: 5%;
+        border-radius : 0px;
+        background-color: white;
+        box-shadow: 0 15px 15px 0 rgba(0,0,0,0.3);
+        transition: box-shadow 0.3s ease-in-out;
+        color : #2C8693;
+        text-align: center;
+        padding: 20px 20px 0 20px;
+
+    }
+    
+    footer
+    {
+        height: 200px;
+    }
+}
